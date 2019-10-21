@@ -15,7 +15,23 @@ export class RecipesPage implements OnInit {
   ) { }
 
   ngOnInit() {
+  }
+
+  //ngOnDestroy -> Is used when we use the "back" naviagtion
+  //Or we return to a previous app page 
+  //Because when this happens the page we are on is removed from the
+  //page's stack, therefore, destroyed
+
+  ionViewDidEnter() {
+  }
+
+  ionViewWillEnter() {
     this.recipes = this.recipesService.getAllRecipes();
   }
 
+  ionViewWillLeave() {
+  }
+
+  ionViewDidLeave() {
+  }
 }
