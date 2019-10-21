@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PlacesService } from '../places.service';
+import { Place } from '../place.model';
 
 @Component({
   selector: 'app-search',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage implements OnInit {
+  loadedPlaces: Place[];
 
-  constructor() { }
+  constructor(
+    private placesService: PlacesService
+  ) { }
 
   ngOnInit() {
+    this.loadedPlaces = this.placesService.places;
+    console.log(this.loadedPlaces);
   }
 
 }
