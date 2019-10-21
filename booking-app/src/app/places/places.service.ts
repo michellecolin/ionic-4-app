@@ -32,6 +32,6 @@ export class PlacesService {
   get places() {
     return [...this._places];
   }
-  
+
   constructor() { }
 }
