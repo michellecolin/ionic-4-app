@@ -9,6 +9,7 @@ import { Place } from '../place.model';
 })
 export class SearchPage implements OnInit {
   loadedPlaces: Place[];
+  listedLoadedPlaces: Place[];
 
   constructor(
     private placesService: PlacesService
@@ -16,7 +17,10 @@ export class SearchPage implements OnInit {
 
   ngOnInit() {
     this.loadedPlaces = this.placesService.places;
-    console.log(this.loadedPlaces);
+    this.listedLoadedPlaces = this.loadedPlaces.slice(1);
+  }
+
+  updateFilter(event: CustomEvent) {
   }
 
 }
